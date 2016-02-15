@@ -1,13 +1,8 @@
-# wghs
-Wakefield Graphical Helper Script : a Python library that makes Pygame slightly easier to use.
+#pygame_functions
 
-Documentation:
-https://github.com/StevePaget/wghs/wiki
+This is a set of functions to make using Pygame easier. (Formerly known as wghs)
 
-Video tutorials:
-https://youtu.be/LGEAl3v626o?list=PLeOSHd3t9lzKI2IYPk7G-jq_0LULdrrQK
+Documentation coming soon.
 
-(More to come!)
 
-Bug reports and suggestions to spaget@wghsss.org.uk
-
+Bug reports and suggestions to pagetworld@gmail.com
