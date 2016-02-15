@@ -1,8 +1,8 @@
-#Demonstration of using draw commands to draw simple shapes using wghs.
+# Demonstration of using draw commands to draw simple shapes using pygame_functions.
 
 from pygame_functions import *
 
-screenSize(400,400)
+screenSize(400,400) # Create a window of 400 pixels square 
 setBackgroundColour("white")
 
 drawEllipse(200,200,350,350,"lightblue")

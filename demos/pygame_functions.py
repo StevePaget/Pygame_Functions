@@ -1,18 +1,23 @@
-# wghs (Wakefield Graphics Helper Scripts)
+# pygame_functions 
+# (formerly wghs)
 
-
-# Report bugs to spaget@wghsss.org.uk
+# Documentation at www.github.com/stevepaget/pygame_functions
+# Report bugs to pagetworld@gmail.com
 
 
 import pygame, math , sys, os
 
 
 bgcolor = pygame.Color("black")
+pygame.mixer.pre_init(44100,-16,2,512)
 pygame.init()
+pygame.mixer.init()
 spriteGroup = pygame.sprite.OrderedUpdates()
 textboxGroup = pygame.sprite.OrderedUpdates()
 gameClock = pygame.time.Clock()
+backgroundImage = None
 musicPaused = False
+
 
 keydict = {"space":pygame.K_SPACE,"esc":pygame.K_ESCAPE,"up":pygame.K_UP,"down":pygame.K_DOWN,"left":pygame.K_LEFT,"right":pygame.K_RIGHT,
 "a":pygame.K_a,
@@ -42,15 +47,15 @@ keydict = {"space":pygame.K_SPACE,"esc":pygame.K_ESCAPE,"up":pygame.K_UP,"down":
 "y":pygame.K_y,
 "z":pygame.K_z,
 "1":pygame.K_1,
- "2":pygame.K_2,
- "3":pygame.K_3,
- "4":pygame.K_4,
- "5":pygame.K_5,
- "6":pygame.K_6,
- "7":pygame.K_7,
- "8":pygame.K_8,
- "9":pygame.K_9,
- "0":pygame.K_0}
+"2":pygame.K_2,
+"3":pygame.K_3,
+"4":pygame.K_4,
+"5":pygame.K_5,
+"6":pygame.K_6,
+"7":pygame.K_7,
+"8":pygame.K_8,
+"9":pygame.K_9,
+"0":pygame.K_0}
 screen = ""
 bgSurface = ""
 
@@ -58,14 +63,27 @@ bgSurface = ""
 class newSprite(pygame.sprite.Sprite):
     def __init__(self,filename):
         pygame.sprite.Sprite.__init__(self)
-        self.originalImage = loadImage(filename)
-        self.image = pygame.Surface.copy(self.originalImage)
+        self.images=[]
+        self.images.append(loadImage(filename))
+        self.image = pygame.Surface.copy(self.images[0])
         self.rect=self.image.get_rect()
         self.rect.topleft=(0,0)
         self.mask = pygame.mask.from_surface(self.image)
 
+    def addImage(self, filename):
+        self.images.append(loadImage(filename))
+
     def move(self,xpos,ypos):
         self.rect.topleft = [xpos,ypos]
+
+    def changeImage(self, index):
+        self.image = self.images[index]
+        oldcenter = self.rect.center
+        self.rect=self.image.get_rect()
+        self.rect.center = oldcenter
+        self.mask = pygame.mask.from_surface(self.image)
+        updateDisplay()
+
 
 class newTextBox(pygame.sprite.Sprite):
     def __init__(self,text,xpos,ypos,width,case):
@@ -149,11 +167,12 @@ class newLabel(pygame.sprite.Sprite):
             self.image = newSurface
         self.rect.topleft = [xpos,ypos]
 
-    def update(self, newText, newFontColour, newBackColour):
-        if newFontColour:
-            self.fontColour = parseColour(newFontColour)
-        if newBackColour:
-            self.background = parseColour(newFontColour)
+    def update(self, newText, fontColour, background):
+        if fontColour:
+            self.fontColour = parseColour(fontColour)
+        if background:
+            self.background = parseColour(background)
+
         oldTopLeft = self.rect.topleft
         newSurface = self.font.render(newText,True,self.fontColour)
         self.rect = newSurface.get_rect()
@@ -164,10 +183,9 @@ class newLabel(pygame.sprite.Sprite):
         else:
             self.image = newSurface
         self.rect.topleft = oldTopLeft
+        updateDisplay()
 
 
-#this first function is just a re-usable way of loading images from disk.
-#It is used whenever the program wants to grab a graphic
 def loadImage( fileName, useColorKey = False ):
     if os.path.isfile(fileName):
         image = pygame.image.load( fileName )
@@ -194,8 +212,6 @@ def screenSize(sizex, sizey,xpos=None,ypos=None, fullscreen = False):
     pygame.display.set_caption("Graphics Window")
     bgSurface = screen.copy()
     pygame.display.update()
-    pygame.mixer.pre_init(44100,-16,2,512)
-    pygame.mixer.init()
 
 def moveSprite(sprite,x,y):
     sprite.move(x,y)
@@ -220,6 +236,14 @@ def setBackgroundColour(colour):
     pygame.display.update()
     bgSurface = screen.copy()
 
+def setBackgroundImage(img):
+    global bgSurface, backgroundImage
+    surf = loadImage(img)
+    backgroundImage = surf
+    screen.blit(surf,[0,0])
+    bgSurface = screen.copy()
+    updateDisplay()
+
 def hideSprite(sprite):
     spriteGroup.remove(sprite)
     pygame.display.update()
@@ -233,13 +257,12 @@ def makeSprite(filename):
     thisSprite = newSprite(filename)
     return thisSprite
 
-def changeSpriteImage(sprite, image):
-    sprite.image = image
-    oldcenter = sprite.rect.center
-    sprite.rect=sprite.image.get_rect()
-    sprite.rect.center = oldcenter
-    sprite.mask = pygame.mask.from_surface(sprite.image)
-    updateDisplay()
+
+def addSpriteImage(sprite, image):
+    sprite.addImage(image)
+    
+def changeSpriteImage(sprite, index):
+    sprite.changeImage(index)
 
 def makeImage(filename):
     return loadImage(filename)
@@ -249,16 +272,16 @@ def touching(sprite1, sprite2):
     return collided
 
 def pause(milliseconds, allowEsc = True):
+    keys = pygame.key.get_pressed()
+    current_time = pygame.time.get_ticks()
+    waittime=current_time + milliseconds
+    while not (current_time>waittime or (keys[pygame.K_ESCAPE] and allowEsc)):
+        pygame.event.clear()
         keys = pygame.key.get_pressed()
+        if (keys[pygame.K_ESCAPE] and allowEsc):
+            pygame.quit()
+            sys.exit()
         current_time = pygame.time.get_ticks()
-        waittime=current_time + milliseconds
-        while not (current_time>waittime or (keys[pygame.K_ESCAPE] and allowEsc)):
-                pygame.event.clear()
-                keys = pygame.key.get_pressed()
-                if (keys[pygame.K_ESCAPE] and allowEsc):
-                    pygame.quit()
-                    sys.exit()
-                current_time = pygame.time.get_ticks()
 
 def drawRect(xpos,ypos,width,height,colour,linewidth=0):
     global bgSurface
@@ -272,7 +295,7 @@ def drawLine(x1,y1,x2,y2,colour,linewidth=1):
     global bgSurface
     colour = parseColour(colour)
     thisrect = pygame.draw.line(screen, colour, (x1,y1), (x2,y2), linewidth)
-    bgrect = pygame.draw.line(screen, colour, (x1,y1), (x2,y2), linewidth)
+    bgrect = pygame.draw.line(bgSurface, colour, (x1,y1), (x2,y2), linewidth)
     pygame.display.update(thisrect)
 
 def drawPolygon(pointlist,colour,linewidth=0):
@@ -287,7 +310,7 @@ def drawEllipse(centreX,centreY,width, height,colour,linewidth=0):
     colour = parseColour(colour)
     thisrect = pygame.Rect(centreX-width/2,centreY-height/2,width,height)
     pygame.draw.ellipse(screen, colour, thisrect, linewidth)
-    pygame.draw.ellipse(bgSurface, colour, thisrect, linewidth)
+    #pygame.draw.ellipse(bgSurface, colour, thisrect, linewidth)
     pygame.display.update(thisrect)
 
 
@@ -300,10 +323,12 @@ def drawTriangle(x1,y1,x2,y2,x3,y3, colour,linewidth=0):
 
 def clearShapes():
     global bgcolor
-    global bgSurface
+    global bgSurface, backgroundImage
     screen.fill(bgcolor)
+    if backgroundImage:
+        screen.blit(backgroundImage,[0,0])
     bgSurface = screen.copy()
-    updateShapes()
+    updateDisplay()
 
 def updateShapes():
     pygame.display.update()
@@ -312,9 +337,9 @@ def end():
     pygame.quit()
 
 def makeSound(filename):
+    pygame.mixer.init()
     thissound = pygame.mixer.Sound(filename)
     return thissound
-
 
 def playSound(sound,loops=0):
     sound.play(loops)
@@ -351,18 +376,19 @@ def pauseMusic():
 def rewindMusic():
     pygame.mixer.music.rewind()
 
+
 def endWait():
-        print("Press ESC to quit")
-        keys = pygame.key.get_pressed()
+    print("Press ESC to quit")
+    keys = pygame.key.get_pressed()
+    current_time = pygame.time.get_ticks()
+    waittime=0
+    while not keys[pygame.K_ESCAPE]:
         current_time = pygame.time.get_ticks()
-        waittime=0
-        while not keys[pygame.K_ESCAPE]:
-            current_time = pygame.time.get_ticks()
-            if current_time >waittime:
-                pygame.event.clear()
-                keys = pygame.key.get_pressed()
-                waittime += 20
-        pygame.quit()
+        if current_time >waittime:
+            pygame.event.clear()
+            keys = pygame.key.get_pressed()
+            waittime += 20
+    pygame.quit()
 
 def keyPressed(keyCheck=""):
     global keydict
@@ -384,9 +410,9 @@ def moveLabel(sprite,x,y):
     sprite.rect.topleft=[x,y]
     updateDisplay()
 
-def changeLabel(textObject,newText,newFontColour=None,newBackColour=None):
-    textObject.update(newText,newFontColour, newBackColour)
-    updateDisplay()
+def changeLabel(textObject,newText,fontColour,background):
+    textObject.update(newText,fontColour, background)
+    #updateDisplay()
 
 def waitPress():
     pygame.event.clear()
@@ -442,6 +468,10 @@ def updateDisplay():
     spriteRects = spriteGroup.draw(screen)
     textboxRects= textboxGroup.draw(screen)
     pygame.display.update()
+    keys = pygame.key.get_pressed()
+    if (keys[pygame.K_ESCAPE]):
+        pygame.quit()
+        sys.exit()    
     spriteGroup.clear(screen, bgSurface)
     textboxGroup.clear(screen, bgSurface)
 
@@ -483,3 +513,6 @@ def mouseX():
 def mouseY():
     y = pygame.mouse.get_pos()
     return y[1]
+
+if __name__ == "__main__":
+    print("pygame_functions is not designed to be run directly.")
