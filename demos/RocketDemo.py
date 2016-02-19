@@ -21,14 +21,17 @@ while True:
         ySpeed -= 2
 
     elif keyPressed("down"):
+        changeSpriteImage(rocket,1)
         rotateSprite(rocket, 180)
         ySpeed += 2
 
     elif keyPressed("right"):
+        changeSpriteImage(rocket,1)
         rotateSprite(rocket, 90)
         xSpeed += 2
 
     elif keyPressed("left"):
+        changeSpriteImage(rocket,1)
         rotateSprite(rocket, -90)
         xSpeed -= 2
 
