@@ -1,6 +1,7 @@
 from pygame_functions import *
 
 screenSize(750,750)
+setBackgroundImage("images/stars.png")
 
 
 surface = makeSprite("images/moonSurface.jpg")  # create the sprite object
@@ -26,6 +27,6 @@ while True:
     if keyPressed("up"):        # check the Wiki for a list of keys that are recognised
         yspeed = -20            # add some upward thrust
     
-    pause(30)                   # This pause also includes checking for Esc press (which quits)
+    tick(30)
     
 endWait()

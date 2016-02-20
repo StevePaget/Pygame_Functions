@@ -75,8 +75,12 @@ class newSprite(pygame.sprite.Sprite):
     def addImage(self, filename):
         self.images.append(loadImage(filename))
 
-    def move(self,xpos,ypos):
-        self.rect.topleft = [xpos,ypos]
+    def move(self,xpos,ypos,centre=False):
+        if centre:
+            self.rect.center = [xpos,ypos]
+        else:
+            self.rect.topleft = [xpos,ypos]
+
 
     def changeImage(self, index):
         self.currentImage = index
@@ -145,8 +149,11 @@ class newTextBox(pygame.sprite.Sprite):
         self.image.blit(newSurface,[10,10])
         updateDisplay()
 
-    def move(self,xpos,ypos):
-        self.rect.topleft = [xpos,ypos]
+    def move(self,xpos,ypos,centre=False):
+        if centre:
+            self.rect.topleft = [xpos,ypos]
+        else:
+            self.rect.center = [xpos,ypos]
 
     def clear(self):
         self.image.fill((255,255,255))
@@ -219,8 +226,8 @@ def screenSize(sizex, sizey,xpos=None,ypos=None, fullscreen = False):
     bgSurface = screen.copy()
     pygame.display.update()
 
-def moveSprite(sprite,x,y):
-    sprite.move(x,y)
+def moveSprite(sprite,x,y, centre=False):
+    sprite.move(x,y,centre)
     updateDisplay()
 
 def rotateSprite(sprite,angle):
@@ -346,6 +353,7 @@ def end():
 def makeSound(filename):
     pygame.mixer.init()
     thissound = pygame.mixer.Sound(filename)
+
     return thissound
 
 def playSound(sound,loops=0):
