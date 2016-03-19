@@ -260,7 +260,7 @@ def setBackgroundImage(img):
 
 def hideSprite(sprite):
     spriteGroup.remove(sprite)
-    pygame.display.update()
+    updateDisplay()
 
 def showSprite(sprite):
     spriteGroup.add(sprite)
@@ -284,6 +284,11 @@ def makeImage(filename):
 def touching(sprite1, sprite2):
     collided = pygame.sprite.collide_mask(sprite1,sprite2)
     return collided
+
+def allTouching(spritename):
+    collisions = pygame.sprite.spritecollide(spritename, spriteGroup, False, collided = pygame.sprite.collide_mask)
+    collisions.remove(spritename)
+    return collisions
 
 def pause(milliseconds, allowEsc = True):
     keys = pygame.key.get_pressed()
