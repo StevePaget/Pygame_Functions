@@ -43,11 +43,11 @@ while True:
     if keyPressed("left"):
         angle = angle - 5
 
-        rotateSprite(rocket,angle)
+        transformSprite(rocket,angle,1)
 
     elif keyPressed("right"):
         angle = angle +5
-        rotateSprite(rocket,angle)
+        transformSprite(rocket, angle, 1)
 
     if keyPressed("up"):
         if clock() > nextframe:
@@ -97,7 +97,7 @@ while True:
 
         moveSprite(thisAsteroid, thisAsteroid.x, thisAsteroid.y)
 
-    # now we will grab a list of all the sprites that ate currently touching the rocket
+    # now we will grab a list of all the sprites that are currently touching the rocket
     hitAsteroids = allTouching(rocket)
     # and change the image of each one
     for thisHitAsteroid in hitAsteroids:

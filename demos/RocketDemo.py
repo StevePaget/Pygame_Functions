@@ -17,22 +17,22 @@ showSprite(rocket)
 while True:
     if keyPressed("up"):
         changeSpriteImage(rocket,1)
-        rotateSprite(rocket, 0)
+        transformSprite(rocket, 0,1)
         ySpeed -= 2
 
     elif keyPressed("down"):
         changeSpriteImage(rocket,1)
-        rotateSprite(rocket, 180)
+        transformSprite(rocket, 180,1)
         ySpeed += 2
 
     elif keyPressed("right"):
         changeSpriteImage(rocket,1)
-        rotateSprite(rocket, 90)
+        transformSprite(rocket, 90,1)
         xSpeed += 2
 
     elif keyPressed("left"):
         changeSpriteImage(rocket,1)
-        rotateSprite(rocket, -90)
+        transformSprite(rocket, -90,1)
         xSpeed -= 2
 
     else:

@@ -26,11 +26,11 @@ while True:
     if keyPressed("left"):
         angle = angle - 5
 
-        rotateSprite(rocket,angle)
+        transformSprite(rocket, angle, 1)
 
     elif keyPressed("right"):
         angle = angle +5
-        rotateSprite(rocket,angle)
+        transformSprite(rocket, angle, 1)
 
     if keyPressed("up"):
         if clock() > nextframe:

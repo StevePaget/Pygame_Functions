@@ -71,6 +71,9 @@ class newSprite(pygame.sprite.Sprite):
         self.rect.topleft=(0,0)
         self.mask = pygame.mask.from_surface(self.image)
         self.angle = 0
+        self.scale = 1
+        self.originalWidth = self.rect.width
+        self.originalHeight = self.rect.height
 
     def addImage(self, filename):
         self.images.append(loadImage(filename))
@@ -90,6 +93,8 @@ class newSprite(pygame.sprite.Sprite):
             self.image = pygame.transform.rotate(self.images[self.currentImage], -self.angle)
         oldcenter = self.rect.center
         self.rect=self.image.get_rect()
+        self.originalWidth = self.rect.width
+        self.originalHeight = self.rect.height
         self.rect.center = oldcenter
         self.mask = pygame.mask.from_surface(self.image)
         updateDisplay()
@@ -231,9 +236,14 @@ def moveSprite(sprite,x,y, centre=False):
     updateDisplay()
 
 def rotateSprite(sprite,angle):
+    print("rotateSprite has been deprecated. Please use transformSprite")
+    transformSprite(sprite,angle,1)
+
+def transformSprite(sprite,angle,scale):
     oldmiddle = sprite.rect.center
     sprite.angle = angle
-    sprite.image = pygame.transform.rotate(sprite.images[sprite.currentImage], -angle)
+    sprite.scale= scale
+    sprite.image = pygame.transform.rotozoom(sprite.images[sprite.currentImage], -angle, scale)
     sprite.rect = sprite.image.get_rect()
     sprite.rect.center = oldmiddle
     updateDisplay()
