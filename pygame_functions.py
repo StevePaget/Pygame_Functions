@@ -101,27 +101,30 @@ class newSprite(pygame.sprite.Sprite):
 
 
 class newTextBox(pygame.sprite.Sprite):
-    def __init__(self,text,xpos,ypos,width,case):
+    def __init__(self,text, xpos,ypos,width,case,maxLength, fontSize):
         pygame.sprite.Sprite.__init__(self)
         self.text = ""
         self.width=width
         self.initialText = text
         self.case=case
-        self.image = pygame.Surface((width,30))
+        self.maxLength = maxLength
+        self.boxSize = int(fontSize*1.7)
+        self.image = pygame.Surface((width, self.boxSize))
         self.image.fill((255,255,255))
-        pygame.draw.rect(self.image,(0,0,0),[0,0,width-1,29],2)
+        pygame.draw.rect(self.image,(0,0,0),[0,0,width-1,self.boxSize-1],2)
         self.rect=self.image.get_rect()
         self.fontFace = pygame.font.match_font("Arial")
         self.fontColour = pygame.Color("black")
         self.initialColour = (180,180,180)
-        self.font = pygame.font.Font(self.fontFace,14)
+        self.font = pygame.font.Font(self.fontFace,fontSize)
         self.rect.topleft = [xpos,ypos]
         newSurface = self.font.render(self.initialText,True,self.initialColour)
-        self.image.blit(newSurface,[10,10])
+        self.image.blit(newSurface,[10,5])
+
 
 
     def update(self,key):
-        if key >31 and key < 127: # only printable characters
+        if key >31 and key < 127 and (self.maxLength == 0 or len(self.text)<self.maxLength): # only printable characters
             keys = pygame.key.get_pressed()
             if key > 96 and key < 123: #only allow shift on letters
                 if self.case == 2 or ((keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]) and self.case==0):
@@ -139,9 +142,9 @@ class newTextBox(pygame.sprite.Sprite):
                     if thistime > nexttime:
                         self.text = self.text[0:len(self.text)-1]
                         self.image.fill((255,255,255))
-                        pygame.draw.rect(self.image,(0,0,0),[0,0,self.width-1,29],2)
+                        pygame.draw.rect(self.image,(0,0,0),[0,0,self.width-1,self.boxSize-1],2)
                         newSurface = self.font.render(self.text,True,self.fontColour)
-                        self.image.blit(newSurface,[10,10])
+                        self.image.blit(newSurface,[10,5])
                         updateDisplay()
                         nexttime = thistime + 50
                         pygame.event.clear()
@@ -149,9 +152,9 @@ class newTextBox(pygame.sprite.Sprite):
                     deleting=False
 
         self.image.fill((255,255,255))
-        pygame.draw.rect(self.image,(0,0,0),[0,0,self.width-1,29],2)
+        pygame.draw.rect(self.image,(0,0,0),[0,0,self.width-1,self.boxSize-1],2)
         newSurface = self.font.render(self.text,True,self.fontColour)
-        self.image.blit(newSurface,[10,10])
+        self.image.blit(newSurface,[10,5])
         updateDisplay()
 
     def move(self,xpos,ypos,centre=False):
@@ -162,9 +165,9 @@ class newTextBox(pygame.sprite.Sprite):
 
     def clear(self):
         self.image.fill((255,255,255))
-        pygame.draw.rect(self.image,(0,0,0),[0,0,self.width-1,29],2)
+        pygame.draw.rect(self.image,(0,0,0),[0,0,self.width-1,self.boxSize-1],2)
         newSurface = self.font.render(self.initialText,True,self.initialColour)
-        self.image.blit(newSurface,[10,10])
+        self.image.blit(newSurface,[10,5])
         updateDisplay()
 
 class newLabel(pygame.sprite.Sprite):
@@ -440,7 +443,7 @@ def moveLabel(sprite,x,y):
     sprite.rect.topleft=[x,y]
     updateDisplay()
 
-def changeLabel(textObject,newText,fontColour,background):
+def changeLabel(textObject,newText,fontColour=None,background=None):
     textObject.update(newText,fontColour, background)
     #updateDisplay()
 
@@ -452,8 +455,8 @@ def waitPress():
         thisevent = pygame.event.wait()
     return thisevent.key
 
-def makeTextBox(xpos,ypos,width,case=0,startingText="Please type here"):
-    thisTextBox = newTextBox(startingText,xpos,ypos,width,case)
+def makeTextBox(xpos,ypos,width,case=0,startingText="Please type here", maxLength=0, fontSize=22):
+    thisTextBox = newTextBox(startingText,xpos,ypos,width,case,maxLength, fontSize)
     textboxGroup.add(thisTextBox)
     return thisTextBox
 
@@ -485,13 +488,22 @@ def clock():
 def tick(fps):
     gameClock.tick(fps)
 
-def showLabel(labelSprite):
-    textboxGroup.add(labelSprite)
+def showLabel(labelName):
+    textboxGroup.add(labelName)
     updateDisplay()
 
-def hideLabel(labelSprite):
-    textboxGroup.remove(labelSprite)
+def hideLabel(labelName):
+    textboxGroup.remove(labelName)
     updateDisplay()
+
+def showTextBox(textBoxName):
+    textboxGroup.add(textBoxName)
+    updateDisplay()
+
+def hideTextBox(textBoxName):
+    textboxGroup.remove(textBoxName)
+    updateDisplay()
+
 
 def updateDisplay():
     global bgSurface
