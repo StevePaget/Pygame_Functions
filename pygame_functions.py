@@ -213,6 +213,8 @@ def loadImage( fileName, useColorKey = False ):
         image = image.convert_alpha()
         # Return the image
         return image
+    else:
+        raise Exception("Error loading image: " + fileName + " - Check filename and path?")
 
 def screenSize(sizex, sizey,xpos=None,ypos=None, fullscreen = False):
     global bgcolor
