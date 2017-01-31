@@ -253,6 +253,8 @@ def transformSprite(sprite,angle,scale):
     sprite.rect.center = oldmiddle
     updateDisplay()
 
+
+
 def killSprite(sprite):
     sprite.kill()
 
@@ -292,6 +294,12 @@ def addSpriteImage(sprite, image):
 
 def changeSpriteImage(sprite, index):
     sprite.changeImage(index)
+
+def nextSpriteImage(sprite):
+    sprite.currentImage +=1
+    if sprite.currentImage > len(sprite.images)-1:
+        sprite.currentImage=0
+    sprite.changeImage(sprite.currentImage)
 
 def makeImage(filename):
     return loadImage(filename)
