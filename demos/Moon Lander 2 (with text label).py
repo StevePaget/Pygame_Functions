@@ -41,7 +41,8 @@ while True:
     if touching(lander, surface):
         ypos = 650 - 150        # place the lander on the surface
         if yspeed > 10:
-            changeSpriteImage(lander, 1)
+            changeSpriteImage(lander,1)
+
         yspeed = 0              # stop the movement
 
 
