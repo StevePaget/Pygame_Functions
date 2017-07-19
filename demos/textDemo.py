@@ -8,7 +8,7 @@ screenSize(800,800)
 instructionLabel = makeLabel("Please enter a word", 40, 10, 10, "blue", "Agency FB", "yellow")
 showLabel(instructionLabel)
 
-wordBox = makeTextBox(10, 80, 300, 0, "Enter text here", 5, 24)
+wordBox = makeTextBox(10, 80, 300, 0, "Enter text here", 15, 24)
 showTextBox(wordBox)
 entry = textBoxInput(wordBox)
 

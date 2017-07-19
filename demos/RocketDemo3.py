@@ -49,6 +49,8 @@ while True:
         angle = angle +5
         transformSprite(rocket, angle, 1)
 
+
+
     if keyPressed("up"):
         if clock() > nextframe:
             nextframe = clock() + 200

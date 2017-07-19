@@ -123,13 +123,17 @@ class newTextBox(pygame.sprite.Sprite):
 
 
 
-    def update(self,key):
+    def update(self,keyevent):
+        key = keyevent.key
+        unicode = keyevent.unicode
         if key >31 and key < 127 and (self.maxLength == 0 or len(self.text)<self.maxLength): # only printable characters
-            keys = pygame.key.get_pressed()
-            if key > 96 and key < 123: #only allow shift on letters
-                if self.case == 2 or ((keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]) and self.case==0):
-                    key -=32
-            self.text += chr(key)
+            if keyevent.mod == 1 and self.case == 1 and key>=97 and key <=122:
+                    # force lowercase letters
+                    key -= 32
+                    self.text += chr(key)
+            else:
+                #use the unicode char
+                self.text += unicode
         elif key == 8:
             #backspace. repeat until clear
             keys = pygame.key.get_pressed()
@@ -487,7 +491,7 @@ def textBoxInput(textbox):
                     pygame.quit()
                     sys.exit()
                 else:
-                    textbox.update(event.key)
+                    textbox.update(event)
             elif event.type== pygame.QUIT:
                 pygame.quit()
                 sys.exit()
