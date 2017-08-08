@@ -34,7 +34,7 @@ while True:
         changeSpriteImage(rocket,1)
         transformSprite(rocket, -90,1)
         xSpeed -= 2
-
+      
     else:
         changeSpriteImage(rocket,0)
 
