@@ -49,6 +49,11 @@ while True:
         angle = angle +5
         transformSprite(rocket, angle, 1)
 
+    if keyPressed("h"):
+        hideAll()
+
+    if keyPressed("u"):
+        unhideAll()
 
 
     if keyPressed("up"):

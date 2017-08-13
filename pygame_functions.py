@@ -16,6 +16,7 @@ textboxGroup = pygame.sprite.OrderedUpdates()
 gameClock = pygame.time.Clock()
 backgroundImage = None
 musicPaused = False
+hiddenSprites= pygame.sprite.OrderedUpdates()
 
 keydict = {"space": pygame.K_SPACE, "esc": pygame.K_ESCAPE, "up": pygame.K_UP, "down": pygame.K_DOWN,
            "left": pygame.K_LEFT, "right": pygame.K_RIGHT,
@@ -290,9 +291,14 @@ def hideSprite(sprite):
 
 
 def hideAll():
+    hiddenSprites.add(spriteGroup.sprites())
     spriteGroup.empty()
     updateDisplay()
 
+def unhideAll():
+    spriteGroup.add(hiddenSprites.sprites())
+    hiddenSprites.empty()
+    updateDisplay()
 
 def showSprite(sprite):
     spriteGroup.add(sprite)
@@ -627,4 +633,5 @@ def mouseY():
 
 
 if __name__ == "__main__":
-    print("pygame_functions is not designed to be run directly.")
+    print(""""pygame_functions is not designed to be run directly.
+    See the wiki at https://github.com/StevePaget/Pygame_Functions/wiki/Getting-Started for more information""")
