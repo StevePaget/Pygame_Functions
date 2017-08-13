@@ -286,6 +286,7 @@ def setBackgroundImage(img):
 
 
 def hideSprite(sprite):
+    hiddenSprites.add(sprite)
     spriteGroup.remove(sprite)
     updateDisplay()
 
