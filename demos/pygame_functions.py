@@ -488,13 +488,12 @@ def endWait():
 
 def keyPressed(keyCheck=""):
     global keydict
-    keyCode = keydict[keyCheck.lower()]
     pygame.event.clear()
     keys = pygame.key.get_pressed()
-    if keys[keyCode] or keyCheck == "":
-        return True
-    else:
-        return False
+    if sum(keys)>0:
+        if keyCheck=="" or keys[keydict[keyCheck.lower()]]:
+            return True
+    return False
 
 
 def makeLabel(text, fontSize, xpos, ypos, fontColour='black', font='Arial', background="clear"):

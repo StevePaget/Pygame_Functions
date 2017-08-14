@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819f54e5-661f-4a9a-843b-5aa1e8043142" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demos/pygame_functions.py" afterPath="$PROJECT_DIR$/demos/pygame_functions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pygame_functions.py" afterPath="$PROJECT_DIR$/pygame_functions.py" />
     </list>
@@ -18,21 +19,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pygame_functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pygame_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="291" column="0" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+            <state relative-caret-position="293">
+              <caret line="494" column="15" lean-forward="false" selection-start-line="494" selection-start-column="15" selection-end-line="494" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RocketDemo3.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RocketDemo3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demos/RocketDemo3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -43,8 +44,8 @@
       <file leaf-file-name="pygame_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygame_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="290" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
+            <state relative-caret-position="327">
+              <caret line="496" column="0" lean-forward="true" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,6 +86,9 @@
       <find>hidesprite</find>
       <find>hides</find>
       <find>hidespr</find>
+      <find>key</find>
+      <find>keypress</find>
+      <find>keypre</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,17 +107,18 @@
         <option value="$PROJECT_DIR$/demos/Moon Lander 2 (with text label).py" />
         <option value="$PROJECT_DIR$/demos/textDemo.py" />
         <option value="$PROJECT_DIR$/demos/RocketDemo.py" />
-        <option value="$PROJECT_DIR$/pygame_functions.py" />
-        <option value="$PROJECT_DIR$/demos/pygame_functions.py" />
         <option value="$PROJECT_DIR$/demos/RocketDemo3.py" />
+        <option value="$PROJECT_DIR$/test loop.py" />
+        <option value="$PROJECT_DIR$/demos/pygame_functions.py" />
+        <option value="$PROJECT_DIR$/pygame_functions.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
-    <option name="y" value="361" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -131,6 +136,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -159,11 +165,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Pygame_Experiments/pygame_functions.py" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -174,7 +179,7 @@
       <recent name="E:\git_repositories\Pygame_Functions\demos" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.RocketDemo3">
+  <component name="RunManager" selected="Python.test loop">
     <configuration default="false" name="RocketDemo3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -209,23 +214,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="RocketDemo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Pygame_Functions" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/RocketDemo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="KeyCodes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,6 +244,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Pygame_Functions" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygame_functions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test loop" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Pygame_Functions" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test loop.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -397,17 +402,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.RocketDemo3" />
       <item index="1" class="java.lang.String" itemvalue="Python.textDemo" />
-      <item index="2" class="java.lang.String" itemvalue="Python.RocketDemo" />
-      <item index="3" class="java.lang.String" itemvalue="Python.KeyCodes" />
-      <item index="4" class="java.lang.String" itemvalue="Python.pygame_functions" />
+      <item index="2" class="java.lang.String" itemvalue="Python.KeyCodes" />
+      <item index="3" class="java.lang.String" itemvalue="Python.pygame_functions" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test loop" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.RocketDemo3" />
-        <item index="1" class="java.lang.String" itemvalue="Python.pygame_functions" />
-        <item index="2" class="java.lang.String" itemvalue="Python.textDemo" />
-        <item index="3" class="java.lang.String" itemvalue="Python.KeyCodes" />
-        <item index="4" class="java.lang.String" itemvalue="Python.RocketDemo" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test loop" />
+        <item index="1" class="java.lang.String" itemvalue="Python.RocketDemo3" />
+        <item index="2" class="java.lang.String" itemvalue="Python.pygame_functions" />
+        <item index="3" class="java.lang.String" itemvalue="Python.textDemo" />
+        <item index="4" class="java.lang.String" itemvalue="Python.KeyCodes" />
       </list>
     </recent_temporary>
   </component>
@@ -433,15 +438,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="361" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13515624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13489583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33370787" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33298096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -488,14 +493,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10829">
-          <caret line="637" column="0" lean-forward="true" selection-start-line="637" selection-start-column="0" selection-end-line="637" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/RocketDemo3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -821,33 +818,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="510" column="0" lean-forward="false" selection-start-line="510" selection-start-column="0" selection-end-line="510" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/RocketDemo3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test loop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/Pygame_Experiments/pygame_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="440" column="0" lean-forward="true" selection-start-line="440" selection-start-column="0" selection-end-line="440" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pygame_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="290" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
+        <state relative-caret-position="327">
+          <caret line="496" column="0" lean-forward="true" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="291" column="0" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+        <state relative-caret-position="293">
+          <caret line="494" column="15" lean-forward="false" selection-start-line="494" selection-start-column="15" selection-end-line="494" selection-end-column="15" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/RocketDemo3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
