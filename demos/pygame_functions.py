@@ -258,6 +258,7 @@ def transformSprite(sprite, angle, scale):
     sprite.image = pygame.transform.rotozoom(sprite.images[sprite.currentImage], -angle, scale)
     sprite.rect = sprite.image.get_rect()
     sprite.rect.center = oldmiddle
+    sprite.mask = pygame.mask.from_surface(sprite.image)
     updateDisplay()
 
 
