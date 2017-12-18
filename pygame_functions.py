@@ -1,8 +1,7 @@
 # pygame_functions
-# (formerly wghs)
 
 # Documentation at www.github.com/stevepaget/pygame_functions
-# Report bugs to pagetworld@gmail.com
+# Report bugs at https://github.com/StevePaget/Pygame_Functions/issues
 
 
 import pygame, math, sys, os
@@ -124,7 +123,7 @@ class newTextBox(pygame.sprite.Sprite):
         key = keyevent.key
         unicode = keyevent.unicode
         if key > 31 and key < 127 and (
-                self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
+            self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
             if keyevent.mod == 1 and self.case == 1 and key >= 97 and key <= 122:
                 # force lowercase letters
                 key -= 32
@@ -632,6 +631,13 @@ def mouseY():
     y = pygame.mouse.get_pos()
     return y[1]
 
+def setIcon(icon):
+    image = loadImage(icon)
+    pygame.display.set_icon(image)
+
+def setWindowTitle(title):
+    pygame.display.set_caption(title)
+    
 
 if __name__ == "__main__":
     print(""""pygame_functions is not designed to be run directly.
