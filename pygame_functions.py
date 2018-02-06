@@ -1,5 +1,4 @@
 # pygame_functions
-# (formerly wghs)
 
 # Documentation at www.github.com/stevepaget/pygame_functions
 # Report bugs at https://github.com/StevePaget/Pygame_Functions/issues
