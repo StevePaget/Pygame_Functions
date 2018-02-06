@@ -123,7 +123,7 @@ class newTextBox(pygame.sprite.Sprite):
         key = keyevent.key
         unicode = keyevent.unicode
         if key > 31 and key < 127 and (
-            self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
+                self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
             if keyevent.mod == 1 and self.case == 1 and key >= 97 and key <= 122:
                 # force lowercase letters
                 key -= 32
@@ -175,39 +175,50 @@ class newTextBox(pygame.sprite.Sprite):
 class newLabel(pygame.sprite.Sprite):
     def __init__(self, text, fontSize, font, fontColour, xpos, ypos, background):
         pygame.sprite.Sprite.__init__(self)
-        self.fontColour = pygame.Color(fontColour)
+        self.text = text
+        self.fontColour = parseColour(fontColour)
         self.fontFace = pygame.font.match_font(font)
         self.fontSize = fontSize
         self.background = background
         self.font = pygame.font.Font(self.fontFace, self.fontSize)
-        newSurface = self.font.render(text, True, self.fontColour)
-        self.rect = newSurface.get_rect()
-        if self.background != "clear":
-            self.image = pygame.Surface((self.rect.width, self.rect.height))
-            self.image.fill(pygame.Color(background))
-            self.image.blit(newSurface, [0, 0])
-        else:
-            self.image = newSurface
+        self.renderText()
         self.rect.topleft = [xpos, ypos]
 
     def update(self, newText, fontColour, background):
+        self.text = newText
         if fontColour:
             self.fontColour = parseColour(fontColour)
         if background:
             self.background = parseColour(background)
 
         oldTopLeft = self.rect.topleft
-        newSurface = self.font.render(newText, True, self.fontColour)
-        self.rect = newSurface.get_rect()
-        if self.background != "clear":
-            self.image = pygame.Surface((self.rect.width, self.rect.height))
-            self.image.fill(self.background)
-            self.image.blit(newSurface, [0, 0])
-        else:
-            self.image = newSurface
+        self.renderText()
         self.rect.topleft = oldTopLeft
         updateDisplay()
 
+    def renderText(self):
+        lineSurfaces = []
+        textLines = self.text.split("<br>")
+        maxWidth = 0
+        maxHeight = 0
+        for line in textLines:
+            lineSurfaces.append(self.font.render(line, True, self.fontColour))
+            thisRect = lineSurfaces[-1].get_rect()
+            if thisRect.width > maxWidth:
+                maxWidth = thisRect.width
+            if thisRect.height > maxHeight:
+                maxHeight = thisRect.height
+        self.image = pygame.Surface((maxWidth, (self.fontSize+1)*len(textLines)+5), pygame.SRCALPHA, 32)
+        self.image.convert_alpha()
+        if self.background != "clear":
+            self.image.fill(parseColour(self.background))
+        linePos = 0
+        for lineSurface in lineSurfaces:
+            self.image.blit(lineSurface,[0,linePos])
+            linePos+=self.fontSize+1
+        self.rect = self.image.get_rect()
+       
+        
 
 def loadImage(fileName, useColorKey=False):
     if os.path.isfile(fileName):
@@ -527,17 +538,23 @@ def makeTextBox(xpos, ypos, width, case=0, startingText="Please type here", maxL
     return thisTextBox
 
 
-def textBoxInput(textbox):
+def textBoxInput(textbox, functionToCall=None, args=[]):
     # starts grabbing key inputs, putting into textbox until enter pressed
     global keydict
     textbox.text = ""
+    returnVal=None
     while True:
         updateDisplay()
+        if functionToCall:
+            returnVal = functionToCall(*args)
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     textbox.clear()
-                    return textbox.text
+                    if returnVal:
+                        return textbox.text, returnVal
+                    else:
+                        return textbox.text
                 elif event.key == pygame.K_ESCAPE:
                     pygame.quit()
                     sys.exit()
@@ -631,13 +648,6 @@ def mouseY():
     y = pygame.mouse.get_pos()
     return y[1]
 
-def setIcon(icon):
-    image = loadImage(icon)
-    pygame.display.set_icon(image)
-
-def setWindowTitle(title):
-    pygame.display.set_caption(title)
-    
 
 if __name__ == "__main__":
     print(""""pygame_functions is not designed to be run directly.
