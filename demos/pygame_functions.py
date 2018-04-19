@@ -261,11 +261,17 @@ def rotateSprite(sprite, angle):
     transformSprite(sprite, angle, 1)
 
 
-def transformSprite(sprite, angle, scale):
+def transformSprite(sprite, angle, scale, hflip=False, vflip=False):
     oldmiddle = sprite.rect.center
-    sprite.angle = angle
-    sprite.scale = scale
-    sprite.image = pygame.transform.rotozoom(sprite.images[sprite.currentImage], -angle, scale)
+    if hflip or vflip:
+        tempImage = pygame.transform.flip(sprite.images[sprite.currentImage],hflip,vflip)
+    else:
+        tempImage = sprite.images[sprite.currentImage]
+    if angle != 0 or scale != 1:
+        sprite.angle = angle
+        sprite.scale = scale
+        tempImage = pygame.transform.rotozoom(tempImage, -angle, scale)
+    sprite.image = tempImage
     sprite.rect = sprite.image.get_rect()
     sprite.rect.center = oldmiddle
     sprite.mask = pygame.mask.from_surface(sprite.image)
