@@ -1,6 +1,6 @@
 #pygame_functions
 
-This is a set of functions to make using Pygame easier. (Formerly known as wghs)
+This is a set of functions to make using Pygame easier.
 
 Check out the wiki at https://github.com/StevePaget/Pygame_Functions/wiki
 
