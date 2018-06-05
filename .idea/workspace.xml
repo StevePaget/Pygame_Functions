@@ -18,8 +18,8 @@
       <file leaf-file-name="pygame_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="86" column="33" lean-forward="true" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+            <state relative-caret-position="323">
+              <caret line="125" column="31" lean-forward="false" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -88,8 +88,18 @@
       <file leaf-file-name="pygame_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygame_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="98" selection-end-column="23" />
+            <state relative-caret-position="242">
+              <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="textDemo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demos/textDemo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -143,9 +153,9 @@
       <find>transf</find>
       <find>transform</find>
       <find>trans</find>
-      <find>newtext</find>
       <find>changeImage</find>
       <find>change</find>
+      <find>newtext</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,7 +171,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/textDemo.py" />
-        <option value="$PROJECT_DIR$/demos/textDemo.py" />
         <option value="$PROJECT_DIR$/demos/RocketDemo.py" />
         <option value="$PROJECT_DIR$/demos/RocketDemo3.py" />
         <option value="$PROJECT_DIR$/test loop.py" />
@@ -169,11 +178,12 @@
         <option value="$PROJECT_DIR$/demos/KeyCodes.py" />
         <option value="$PROJECT_DIR$/demos/collisionwhilerotatingtest.py" />
         <option value="$PROJECT_DIR$/demos/ai error.py" />
-        <option value="$PROJECT_DIR$/pygame_functions.py" />
         <option value="$PROJECT_DIR$/testerror.py" />
         <option value="$PROJECT_DIR$/demos/flipDemo.py" />
-        <option value="$PROJECT_DIR$/demos/pygame_functions.py" />
         <option value="$PROJECT_DIR$/demos/ResizeDemo.py" />
+        <option value="$PROJECT_DIR$/demos/textDemo.py" />
+        <option value="$PROJECT_DIR$/pygame_functions.py" />
+        <option value="$PROJECT_DIR$/demos/pygame_functions.py" />
       </list>
     </option>
   </component>
@@ -198,8 +208,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,6 +254,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,24 +271,7 @@
       <recent name="E:\git_repositories\Pygame_Functions\demos" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ResizeDemo">
-    <configuration default="false" name="multilineLabel" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Pygame_Functions" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/multilineLabel.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.textDemo">
     <configuration default="false" name="RocketDemo3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -343,6 +336,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Pygame_Functions" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/ResizeDemo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="textDemo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Pygame_Functions" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/textDemo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -482,19 +492,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.multilineLabel" />
-      <item index="1" class="java.lang.String" itemvalue="Python.RocketDemo3" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Moon Lander (Sprites demo)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.RocketDemo2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ResizeDemo" />
+      <item index="0" class="java.lang.String" itemvalue="Python.RocketDemo3" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Moon Lander (Sprites demo)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.RocketDemo2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ResizeDemo" />
+      <item index="4" class="java.lang.String" itemvalue="Python.textDemo" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ResizeDemo" />
-        <item index="1" class="java.lang.String" itemvalue="Python.RocketDemo2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.RocketDemo3" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Moon Lander (Sprites demo)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.multilineLabel" />
+        <item index="0" class="java.lang.String" itemvalue="Python.textDemo" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ResizeDemo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.RocketDemo2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.RocketDemo3" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Moon Lander (Sprites demo)" />
       </list>
     </recent_temporary>
   </component>
@@ -549,7 +559,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3319239" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3319239" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -835,13 +845,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/collisionwhilerotatingtest.py" />
     <entry file="file://$PROJECT_DIR$/demos/ai error.py" />
-    <entry file="file://$PROJECT_DIR$/demos/textDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testerror.py" />
     <entry file="file://$PROJECT_DIR$/menu.jpg" />
     <entry file="file://$PROJECT_DIR$/demos/multilineLabel.py">
@@ -892,14 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pygame_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="98" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/ResizeDemo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -908,10 +903,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demos/textDemo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygame_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="86" column="33" lean-forward="true" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+        <state relative-caret-position="323">
+          <caret line="125" column="31" lean-forward="false" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
           <folding />
         </state>
       </provider>

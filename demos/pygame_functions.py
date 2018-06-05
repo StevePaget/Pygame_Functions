@@ -124,7 +124,7 @@ class newTextBox(pygame.sprite.Sprite):
         unicode = keyevent.unicode
         if key > 31 and key < 127 and (
                 self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
-            if keyevent.mod == 1 and self.case == 1 and key >= 97 and key <= 122:
+            if keyevent.mod in (1,2) and self.case == 1 and key >= 97 and key <= 122:
                 # force lowercase letters
                 self.text += chr(key)
             elif keyevent.mod == 0 and self.case == 2 and key >= 97 and key <= 122:
