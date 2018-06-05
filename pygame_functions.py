@@ -127,11 +127,13 @@ class newTextBox(pygame.sprite.Sprite):
                 self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
             if keyevent.mod == 1 and self.case == 1 and key >= 97 and key <= 122:
                 # force lowercase letters
-                key -= 32
                 self.text += chr(key)
+            elif keyevent.mod == 0 and self.case == 2 and key >= 97 and key <= 122:
+                self.text += chr(key-32)
             else:
                 # use the unicode char
                 self.text += unicode
+                      
         elif key == 8:
             # backspace. repeat until clear
             keys = pygame.key.get_pressed()
