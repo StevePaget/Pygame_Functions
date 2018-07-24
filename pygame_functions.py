@@ -16,6 +16,7 @@ gameClock = pygame.time.Clock()
 backgroundImage = None
 musicPaused = False
 hiddenSprites= pygame.sprite.OrderedUpdates()
+screenRefresh = True
 
 keydict = {"space": pygame.K_SPACE, "esc": pygame.K_ESCAPE, "up": pygame.K_UP, "down": pygame.K_DOWN,
            "left": pygame.K_LEFT, "right": pygame.K_RIGHT,
@@ -96,8 +97,8 @@ class newSprite(pygame.sprite.Sprite):
         self.originalHeight = originalRect.height
         self.rect.center = oldcenter
         self.mask = pygame.mask.from_surface(self.image)
-        updateDisplay()
-
+        if screenRefresh:
+            updateDisplay()
 
 class newTextBox(pygame.sprite.Sprite):
     def __init__(self, text, xpos, ypos, width, case, maxLength, fontSize):
@@ -133,7 +134,7 @@ class newTextBox(pygame.sprite.Sprite):
             else:
                 # use the unicode char
                 self.text += unicode
-                      
+      
         elif key == 8:
             # backspace. repeat until clear
             keys = pygame.key.get_pressed()
@@ -159,7 +160,8 @@ class newTextBox(pygame.sprite.Sprite):
         pygame.draw.rect(self.image, (0, 0, 0), [0, 0, self.width - 1, self.boxSize - 1], 2)
         newSurface = self.font.render(self.text, True, self.fontColour)
         self.image.blit(newSurface, [10, 5])
-        updateDisplay()
+        if screenRefresh:
+            updateDisplay()
 
     def move(self, xpos, ypos, centre=False):
         if centre:
@@ -172,7 +174,8 @@ class newTextBox(pygame.sprite.Sprite):
         pygame.draw.rect(self.image, (0, 0, 0), [0, 0, self.width - 1, self.boxSize - 1], 2)
         newSurface = self.font.render(self.initialText, True, self.initialColour)
         self.image.blit(newSurface, [10, 5])
-        updateDisplay()
+        if screenRefresh:
+            updateDisplay()
 
 
 class newLabel(pygame.sprite.Sprite):
@@ -197,7 +200,8 @@ class newLabel(pygame.sprite.Sprite):
         oldTopLeft = self.rect.topleft
         self.renderText()
         self.rect.topleft = oldTopLeft
-        updateDisplay()
+        if screenRefresh:
+            updateDisplay()
 
     def renderText(self):
         lineSurfaces = []
@@ -252,11 +256,13 @@ def screenSize(sizex, sizey, xpos=None, ypos=None, fullscreen=False):
     pygame.display.set_caption("Graphics Window")
     bgSurface = screen.copy()
     pygame.display.update()
+    return screen
 
 
 def moveSprite(sprite, x, y, centre=False):
     sprite.move(x, y, centre)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def rotateSprite(sprite, angle):
@@ -278,12 +284,14 @@ def transformSprite(sprite, angle, scale, hflip=False, vflip=False):
     sprite.rect = sprite.image.get_rect()
     sprite.rect.center = oldmiddle
     sprite.mask = pygame.mask.from_surface(sprite.image)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def killSprite(sprite):
     sprite.kill()
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def setBackgroundColour(colour):
@@ -302,34 +310,38 @@ def setBackgroundImage(img):
     backgroundImage = surf
     screen.blit(surf, [0, 0])
     bgSurface = screen.copy()
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def hideSprite(sprite):
     hiddenSprites.add(sprite)
     spriteGroup.remove(sprite)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def hideAll():
     hiddenSprites.add(spriteGroup.sprites())
     spriteGroup.empty()
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 def unhideAll():
     spriteGroup.add(hiddenSprites.sprites())
     hiddenSprites.empty()
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 def showSprite(sprite):
     spriteGroup.add(sprite)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def makeSprite(filename):
     thisSprite = newSprite(filename)
     return thisSprite
-
 
 def addSpriteImage(sprite, image):
     sprite.addImage(image)
@@ -389,7 +401,8 @@ def drawRect(xpos, ypos, width, height, colour, linewidth=0):
     colour = parseColour(colour)
     thisrect = pygame.draw.rect(screen, colour, [xpos, ypos, width, height], linewidth)
     bgrect = pygame.draw.rect(bgSurface, colour, [xpos, ypos, width, height], linewidth)
-    pygame.display.update(thisrect)
+    if screenRefresh:
+        pygame.display.update(thisrect)
 
 
 def drawLine(x1, y1, x2, y2, colour, linewidth=1):
@@ -397,7 +410,8 @@ def drawLine(x1, y1, x2, y2, colour, linewidth=1):
     colour = parseColour(colour)
     thisrect = pygame.draw.line(screen, colour, (x1, y1), (x2, y2), linewidth)
     bgrect = pygame.draw.line(bgSurface, colour, (x1, y1), (x2, y2), linewidth)
-    pygame.display.update(thisrect)
+    if screenRefresh:
+        pygame.display.update(thisrect)
 
 
 def drawPolygon(pointlist, colour, linewidth=0):
@@ -405,7 +419,8 @@ def drawPolygon(pointlist, colour, linewidth=0):
     colour = parseColour(colour)
     thisrect = pygame.draw.polygon(screen, colour, pointlist, linewidth)
     bgrect = pygame.draw.polygon(bgSurface, colour, pointlist, linewidth)
-    pygame.display.update(thisrect)
+    if screenRefresh:
+        pygame.display.update(thisrect)
 
 
 def drawEllipse(centreX, centreY, width, height, colour, linewidth=0):
@@ -414,7 +429,8 @@ def drawEllipse(centreX, centreY, width, height, colour, linewidth=0):
     thisrect = pygame.Rect(centreX - width / 2, centreY - height / 2, width, height)
     pygame.draw.ellipse(screen, colour, thisrect, linewidth)
     # pygame.draw.ellipse(bgSurface, colour, thisrect, linewidth)
-    pygame.display.update(thisrect)
+    if screenRefresh:
+        pygame.display.update(thisrect)
 
 
 def drawTriangle(x1, y1, x2, y2, x3, y3, colour, linewidth=0):
@@ -422,7 +438,8 @@ def drawTriangle(x1, y1, x2, y2, x3, y3, colour, linewidth=0):
     colour = parseColour(colour)
     thisrect = pygame.draw.polygon(screen, colour, [(x1, y1), (x2, y2), (x3, y3)], linewidth)
     bgrect = pygame.draw.polygon(bgSurface, colour, [(x1, y1), (x2, y2), (x3, y3)], linewidth)
-    pygame.display.update(thisrect)
+    if screenRefresh:
+        pygame.display.update(thisrect)
 
 
 def clearShapes():
@@ -432,7 +449,8 @@ def clearShapes():
     if backgroundImage:
         screen.blit(backgroundImage, [0, 0])
     bgSurface = screen.copy()
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def updateShapes():
@@ -524,7 +542,8 @@ def makeLabel(text, fontSize, xpos, ypos, fontColour='black', font='Arial', back
 
 def moveLabel(sprite, x, y):
     sprite.rect.topleft = [x, y]
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def changeLabel(textObject, newText, fontColour=None, background=None):
@@ -580,27 +599,35 @@ def clock():
 
 
 def tick(fps):
+    keys = pygame.key.get_pressed()
+    if (keys[pygame.K_ESCAPE]):
+        pygame.quit()
+        sys.exit()
     gameClock.tick(fps)
 
 
 def showLabel(labelName):
     textboxGroup.add(labelName)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def hideLabel(labelName):
     textboxGroup.remove(labelName)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def showTextBox(textBoxName):
     textboxGroup.add(textBoxName)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def hideTextBox(textBoxName):
     textboxGroup.remove(textBoxName)
-    updateDisplay()
+    if screenRefresh:
+        updateDisplay()
 
 
 def updateDisplay():
@@ -657,6 +684,9 @@ def mouseY():
     y = pygame.mouse.get_pos()
     return y[1]
 
+def setScreenRefresh(val):
+    global screenRefresh
+    screenRefresh = val
 
 if __name__ == "__main__":
     print(""""pygame_functions is not designed to be run directly.

@@ -63,7 +63,6 @@ while True:
         yPos = 750
 
     moveSprite(rocket, xPos, yPos,True)
-
     tick(30)
 
 endWait()

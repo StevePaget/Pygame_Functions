@@ -12,7 +12,7 @@ setScreenRefresh(False)
 
 # we will store our asteroid sprites in a list
 asteroids = []
-for x in range(5):
+for x in range(200):
     thisAsteroid = makeSprite("images/asteroid.png")
     # we will also add an alternative image to each sprite
     addSpriteImage(thisAsteroid, "images/redasteroid.png")
@@ -33,7 +33,7 @@ yPos = 320
 xSpeed = 0
 ySpeed = 0
 angle=0
-thrustAmount = 0.5
+thrustAmount = 0.3
 moveSprite(rocket, xPos, yPos,True)
 showSprite(rocket)
 thrustFrame = 1
@@ -110,6 +110,7 @@ while True:
     for thisHitAsteroid in hitAsteroids:
         changeSpriteImage(thisHitAsteroid,1)
 
-    tick(30)
+    updateDisplay()
+    tick(60)
 
 endWait()
