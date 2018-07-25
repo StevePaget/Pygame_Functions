@@ -684,7 +684,7 @@ def mouseY():
     y = pygame.mouse.get_pos()
     return y[1]
 
-def setScreenRefresh(val):
+def setAutoUpdate(val):
     global screenRefresh
     screenRefresh = val
 

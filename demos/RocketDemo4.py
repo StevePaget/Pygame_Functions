@@ -8,11 +8,10 @@ rocket = makeSprite("images/rocket1.png")
 addSpriteImage(rocket,"images/rocket2a.png")
 addSpriteImage(rocket,"images/rocket2b.png")
 thrustSound = makeSound("sounds/Rocket-SoundBible.wav")
-setScreenRefresh(False)
 
 # we will store our asteroid sprites in a list
 asteroids = []
-for x in range(200):
+for x in range(5):
     thisAsteroid = makeSprite("images/asteroid.png")
     # we will also add an alternative image to each sprite
     addSpriteImage(thisAsteroid, "images/redasteroid.png")
@@ -110,7 +109,6 @@ while True:
     for thisHitAsteroid in hitAsteroids:
         changeSpriteImage(thisHitAsteroid,1)
 
-    updateDisplay()
     tick(60)
 
 endWait()
