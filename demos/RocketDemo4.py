@@ -1,17 +1,27 @@
 from pygame_functions import *
 import math, random
 
+# This version is used to demonstrate the more efficient use of setAutoUpdate and updateDisplay
+# when displaying many sprites.
+# for mor info, see https://www.youtube.com/watch?v=SA0F6Huj9dg
+
+
+
 screenSize(1000, 750)
 setBackgroundImage("images/stars.png")
+
+setAutoUpdate(False)
 
 rocket = makeSprite("images/rocket1.png")
 addSpriteImage(rocket,"images/rocket2a.png")
 addSpriteImage(rocket,"images/rocket2b.png")
 thrustSound = makeSound("sounds/Rocket-SoundBible.wav")
+fpsDisplay = makeLabel("FPS:",30,10,10,"white")
+showLabel(fpsDisplay)
 
 # we will store our asteroid sprites in a list
 asteroids = []
-for x in range(5):
+for x in range(500):
     thisAsteroid = makeSprite("images/asteroid.png")
     # we will also add an alternative image to each sprite
     addSpriteImage(thisAsteroid, "images/redasteroid.png")
@@ -109,6 +119,8 @@ while True:
     for thisHitAsteroid in hitAsteroids:
         changeSpriteImage(thisHitAsteroid,1)
 
-    tick(60)
+    fps= tick(60)
+    changeLabel(fpsDisplay, "FPS: {0}".format(str(round(fps, 2))))
+    updateDisplay()
 
 endWait()

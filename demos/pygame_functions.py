@@ -604,6 +604,7 @@ def tick(fps):
         pygame.quit()
         sys.exit()
     gameClock.tick(fps)
+    return gameClock.get_fps()
 
 
 def showLabel(labelName):
