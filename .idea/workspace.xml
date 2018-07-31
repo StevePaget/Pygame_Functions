@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819f54e5-661f-4a9a-843b-5aa1e8043142" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/Agent (Animation Demo).py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/Agent (Animation Demo).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/RocketDemo3.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/RocketDemo3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/pygame_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/pygame_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygame_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame_functions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,25 +28,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="py" value="5899" />
+          <entry key="py" value="5900" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="5899" />
+          <entry key="Python" value="5900" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="1" />
-          <entry key="py" value="10" />
+          <entry key="py" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="Python" value="10" />
+          <entry key="Python" value="11" />
         </counts>
       </usages-collector>
     </session>
@@ -79,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demos/RocketDemo3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="391">
+              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -100,13 +97,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="107" column="45" lean-forward="true" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
+            <state relative-caret-position="355">
+              <caret line="114" column="13" lean-forward="true" selection-end-line="729" />
               <folding>
                 <marker date="1533021399825" expanded="true" signature="1693:3520" ph="..." />
                 <marker date="1533021399825" expanded="true" signature="2450:3347" ph="..." />
                 <marker date="1533021399825" expanded="true" signature="12782:12817" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pygame_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="732" lean-forward="true" selection-start-line="732" selection-end-line="732" />
             </state>
           </provider>
         </entry>
@@ -179,11 +185,11 @@
         <option value="$PROJECT_DIR$/demos/RocketDemo2.py" />
         <option value="$PROJECT_DIR$/demos/textDemo.py" />
         <option value="$PROJECT_DIR$/demos/RocketDemo4.py" />
-        <option value="$PROJECT_DIR$/pygame_functions.py" />
         <option value="$PROJECT_DIR$/demos/pygame_functions.py" />
         <option value="$PROJECT_DIR$/demos/Agent (Animation Demo).py" />
         <option value="$PROJECT_DIR$/demos/scrollDemo.py" />
         <option value="$PROJECT_DIR$/demos/RocketDemo3.py" />
+        <option value="$PROJECT_DIR$/pygame_functions.py" />
       </list>
     </option>
   </component>
@@ -209,6 +215,12 @@
               <item name="Pygame_Functions" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pygame_Functions" type="462c0819:PsiDirectoryNode" />
               <item name="demos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pygame_Functions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pygame_Functions" type="462c0819:PsiDirectoryNode" />
+              <item name="demos" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -429,12 +441,12 @@
     <frame x="-7" y="0" width="1934" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14240506" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14240506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33479214" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33479214" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -570,27 +582,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pygame_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="340" lean-forward="true" selection-start-line="340" selection-end-line="340" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/images/agentpunch1.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="107" column="45" lean-forward="true" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
-          <folding>
-            <marker date="1533021399825" expanded="true" signature="1693:3520" ph="..." />
-            <marker date="1533021399825" expanded="true" signature="2450:3347" ph="..." />
-            <marker date="1533021399825" expanded="true" signature="12782:12817" ph="..." />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/Agent (Animation Demo).py">
       <provider selected="true" editor-type-id="text-editor">
@@ -618,8 +611,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/RocketDemo3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="391">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="114" column="13" lean-forward="true" selection-end-line="729" />
+          <folding>
+            <marker date="1533021399825" expanded="true" signature="1693:3520" ph="..." />
+            <marker date="1533021399825" expanded="true" signature="2450:3347" ph="..." />
+            <marker date="1533021399825" expanded="true" signature="12782:12817" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygame_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="732" lean-forward="true" selection-start-line="732" selection-end-line="732" />
         </state>
       </provider>
     </entry>
