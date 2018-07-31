@@ -8,7 +8,7 @@ rocket = makeSprite("images/rocket1.png")
 addSpriteImage(rocket,"images/rocket2a.png")
 addSpriteImage(rocket,"images/rocket2b.png")
 thrustSound = makeSound("sounds/Rocket-SoundBible.wav")
-setScreenRefresh(False)
+
 
 # we will store our asteroid sprites in a list
 asteroids = []

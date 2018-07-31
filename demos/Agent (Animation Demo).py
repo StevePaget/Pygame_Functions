@@ -11,7 +11,7 @@ addSpriteImage(agent, "images/agent2.png")
 addSpriteImage(agent, "images/agent3.png")
 addSpriteImage(agent, "images/agent4.png")
 addSpriteImage(agent, "images/agent5.png")
-addSpriteImage(agent, "images/agent6.png")
+addSpriteImage(agent, "images/agent6.png")  # See the alternative way of doing this with a Sprite Sheet
 
 agentX = 200        # Set the X position on the screen
 agentImage = 0      # This lets us track the current animation frame for the agent
