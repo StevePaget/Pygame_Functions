@@ -27,15 +27,19 @@ while True:
     if keyPressed("right"):
         changeSpriteImage(testSprite, 0*8+frame)    # 0*8 because right animations are the 0th set in the sprite sheet
         scrollBackground(-5,0)                      # The player is moving right, so we scroll the background left
+
     elif keyPressed("down"):
         changeSpriteImage(testSprite, 1*8+frame)    # down facing animations are the 1st set
         scrollBackground(0, -5)
+
     elif keyPressed("left"):
         changeSpriteImage(testSprite, 2*8+frame)    # and so on
         scrollBackground(5,0)
+
     elif keyPressed("up"):
         changeSpriteImage(testSprite,3*8+frame)
         scrollBackground(0,5)
+
     else:
         changeSpriteImage(testSprite, 1 * 8 + 5)  # the static facing front look
 

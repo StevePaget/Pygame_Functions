@@ -348,10 +348,14 @@ def killSprite(sprite):
 
 def setBackgroundColour(colour):
     background.setColour(colour)
+    if screenRefresh:
+        updateDisplay()
 
 def setBackgroundImage(img):
     global background
     background.setTiles(img)
+    if screenRefresh:
+        updateDisplay()
 
 
 
@@ -427,6 +431,7 @@ def pause(milliseconds, allowEsc=True):
     keys = pygame.key.get_pressed()
     current_time = pygame.time.get_ticks()
     waittime = current_time + milliseconds
+    updateDisplay()
     while not (current_time > waittime or (keys[pygame.K_ESCAPE] and allowEsc)):
         pygame.event.clear()
         keys = pygame.key.get_pressed()
@@ -541,6 +546,7 @@ def rewindMusic():
 
 
 def endWait():
+    updateDisplay()
     print("Press ESC to quit")
     keys = pygame.key.get_pressed()
     current_time = pygame.time.get_ticks()
