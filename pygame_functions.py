@@ -356,6 +356,7 @@ def setBackgroundImage(img):
     global background
     background.setTiles(img)
     if screenRefresh:
+        updateDisplay()
 
 
 def hideSprite(sprite):
@@ -363,6 +364,7 @@ def hideSprite(sprite):
     spriteGroup.remove(sprite)
     if screenRefresh:
         updateDisplay()
+
 
 
 def hideAll():
