@@ -4,12 +4,10 @@ from pygame_functions import *
 screenSize(600,600)
 setAutoUpdate(False)
 
-# The background is a 2-dimensional array of images. It wraps left-right and up-down
-# so the tiles are arranged like this:
-# 1  2
-# 3  4
 
-setBackgroundImage([ ["images/dungeonFloor1.png","images/dungeonFloor2.png"] , ["images/dungeonFloor3.png","images/dungeonFloor4.png"] ])
+setBackgroundImage( [  ["images/dungeonFloor1.png", "images/dungeonFloor2.png"] ,
+                       ["images/dungeonFloor3.png", "images/dungeonFloor4.png"]  ])
+
 
 testSprite  = makeSprite("images/links.gif",32)  # links.gif contains 32 separate frames of animation. Sizes are automatically calculated.
 

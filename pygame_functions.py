@@ -61,18 +61,14 @@ screen = ""
 class Background():
     def __init__(self):
         self.colour = pygame.Color("black")
-        self.dimensions = 0
 
     def setTiles(self, tiles):
         if type(tiles) is str:
             self.tiles = [[loadImage(tiles)]]
-            self.dimensions = 0
         elif type(tiles[0]) is str:
-            self.tiles = [[loadImage(i) for i in tiles], None]
-            self.dimensions = 1
+            self.tiles = [[loadImage(i) for i in tiles]]
         else:
             self.tiles = [[loadImage(i) for i in row] for row in tiles]
-            self.dimensions = 2
         self.stagePosX = 0
         self.stagePosY = 0
         self.tileWidth = self.tiles[0][0].get_width()
@@ -364,7 +360,6 @@ def hideSprite(sprite):
     spriteGroup.remove(sprite)
     if screenRefresh:
         updateDisplay()
-
 
 
 def hideAll():
