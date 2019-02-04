@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819f54e5-661f-4a9a-843b-5aa1e8043142" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/demos/robotron.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/animationDemo2.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/animationDemo2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/pygame_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/pygame_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/scrollDemo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/scrollDemo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygame_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame_functions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,40 +18,41 @@
     <session id="-408109287">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="16" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.3" value="4" />
-          <entry key="project.open.time.4" value="5" />
+          <entry key="project.open.time.4" value="7" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="10" />
-          <entry key="py" value="6439" />
+          <entry key="dummy" value="11" />
+          <entry key="py" value="7590" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="6439" />
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="Python" value="7590" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="1" />
-          <entry key="py" value="25" />
+          <entry key="py" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="Python" value="25" />
+          <entry key="Python" value="31" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
@@ -62,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demos/scrollDemo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="136">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -77,11 +75,38 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demos/KeyCodes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demos/animationDemo2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demos/robotron.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="60" column="59" lean-forward="true" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <marker date="1534502797557" expanded="true" signature="1693:3391" ph="..." />
                 <marker date="1534502797557" expanded="true" signature="2321:3218" ph="..." />
@@ -102,8 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>background</find>
-      <find>background =</find>
       <find>screensize</find>
       <find>setbackgr</find>
       <find>updatedispl</find>
@@ -132,6 +155,8 @@
       <find>changesprite</find>
       <find>mak</find>
       <find>scroll</find>
+      <find>keptr</find>
+      <find>keypress</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,10 +191,13 @@
         <option value="$PROJECT_DIR$/demos/pygame_functions.py" />
         <option value="$PROJECT_DIR$/demos/scrollDemo.py" />
         <option value="$PROJECT_DIR$/pygame_functions.py" />
+        <option value="$PROJECT_DIR$/demos/timetest.py" />
+        <option value="$PROJECT_DIR$/demos/testKeyCodes.py" />
+        <option value="$PROJECT_DIR$/demos/robotron.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-7" />
     <option name="width" value="1934" />
     <option name="height" value="1047" />
@@ -191,6 +219,12 @@
               <item name="Pygame_Functions" type="462c0819:PsiDirectoryNode" />
               <item name="demos" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Pygame_Functions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pygame_Functions" type="462c0819:PsiDirectoryNode" />
+              <item name="demos" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -203,12 +237,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\git_repositories\Pygame_Functions\demos" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\git_repositories\Pygame_Functions\demos" />
       <recent name="E:\git_repositories\Pygame_Functions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git_repositories\Pygame_Functions\demos" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -223,7 +257,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.scrollDemo">
+  <component name="RunManager" selected="Python.robotron">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -243,7 +277,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="Agent (Animation Demo)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="KeyCodes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Pygame_Functions" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -255,7 +289,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/Agent (Animation Demo).py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/KeyCodes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -264,7 +298,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="RocketDemo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="robotron" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Pygame_Functions" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -276,49 +310,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/RocketDemo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="animationDemo2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Pygame_Functions" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/animationDemo2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pygame_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Pygame_Functions" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/pygame_functions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/robotron.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -348,20 +340,62 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testKeyCodes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Pygame_Functions" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/testKeyCodes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="timetest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Pygame_Functions" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/timetest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.scrollDemo" />
-      <item itemvalue="Python.RocketDemo" />
-      <item itemvalue="Python.animationDemo2" />
-      <item itemvalue="Python.Agent (Animation Demo)" />
-      <item itemvalue="Python.pygame_functions" />
+      <item itemvalue="Python.timetest" />
+      <item itemvalue="Python.KeyCodes" />
+      <item itemvalue="Python.testKeyCodes" />
+      <item itemvalue="Python.robotron" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.robotron" />
+        <item itemvalue="Python.testKeyCodes" />
+        <item itemvalue="Python.KeyCodes" />
+        <item itemvalue="Python.timetest" />
         <item itemvalue="Python.scrollDemo" />
-        <item itemvalue="Python.pygame_functions" />
-        <item itemvalue="Python.animationDemo2" />
-        <item itemvalue="Python.Agent (Animation Demo)" />
-        <item itemvalue="Python.RocketDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -411,12 +445,12 @@
     <frame x="-7" y="0" width="1934" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14240506" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14240506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33479214" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33479214" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39715537" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -475,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/KeyCodes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/collisionwhilerotatingtest.py" />
     <entry file="file://$PROJECT_DIR$/demos/ai error.py" />
     <entry file="file://$PROJECT_DIR$/testerror.py" />
@@ -500,9 +527,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Sarah Downloads/Sprites-master/Sprites-master/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://E:/Sarah Downloads/Sprites-master/Sprites-master/main.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
@@ -565,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/animationDemo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/Agent (Animation Demo).py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -586,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/Moon Lander 2 (with text label).py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pygame_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1186">
@@ -602,20 +613,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/scrollDemo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/timetest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/testKeyCodes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/Moon Lander 2 (with text label).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/KeyCodes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/pygame_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <marker date="1534502797557" expanded="true" signature="1693:3391" ph="..." />
             <marker date="1534502797557" expanded="true" signature="2321:3218" ph="..." />
             <marker date="1534502797557" expanded="true" signature="12653:12734" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/animationDemo2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/robotron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="60" column="59" lean-forward="true" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
         </state>
       </provider>
     </entry>
