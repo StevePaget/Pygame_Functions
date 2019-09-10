@@ -18,7 +18,7 @@ screenRefresh = True
 background = None
 
 keydict = {"space": pygame.K_SPACE, "esc": pygame.K_ESCAPE, "up": pygame.K_UP, "down": pygame.K_DOWN,
-           "left": pygame.K_LEFT, "right": pygame.K_RIGHT,
+           "left": pygame.K_LEFT, "right": pygame.K_RIGHT, "return": pygame.K_RETURN,
            "a": pygame.K_a,
            "b": pygame.K_b,
            "c": pygame.K_c,
