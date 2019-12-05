@@ -6,7 +6,6 @@
 
 import pygame, math, sys, os
 
-
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 pygame.mixer.init()
@@ -14,12 +13,12 @@ spriteGroup = pygame.sprite.OrderedUpdates()
 textboxGroup = pygame.sprite.OrderedUpdates()
 gameClock = pygame.time.Clock()
 musicPaused = False
-hiddenSprites= pygame.sprite.OrderedUpdates()
+hiddenSprites = pygame.sprite.OrderedUpdates()
 screenRefresh = True
 background = None
 
 keydict = {"space": pygame.K_SPACE, "esc": pygame.K_ESCAPE, "up": pygame.K_UP, "down": pygame.K_DOWN,
-           "left": pygame.K_LEFT, "right": pygame.K_RIGHT,
+           "left": pygame.K_LEFT, "right": pygame.K_RIGHT, "return": pygame.K_RETURN,
            "a": pygame.K_a,
            "b": pygame.K_b,
            "c": pygame.K_c,
@@ -63,25 +62,25 @@ class Background():
     def __init__(self):
         self.colour = pygame.Color("black")
 
-    def setTiles(self,tiles):
+    def setTiles(self, tiles):
         if type(tiles) is str:
             self.tiles = [[loadImage(tiles)]]
         elif type(tiles[0]) is str:
             self.tiles = [[loadImage(i) for i in tiles]]
         else:
-            self.tiles = [ [loadImage(i) for i in row] for row in tiles]
+            self.tiles = [[loadImage(i) for i in row] for row in tiles]
         self.stagePosX = 0
         self.stagePosY = 0
         self.tileWidth = self.tiles[0][0].get_width()
         self.tileHeight = self.tiles[0][0].get_height()
-        screen.blit(self.tiles[0][0],[0,0])
+        screen.blit(self.tiles[0][0], [0, 0])
         self.surface = screen.copy()
 
-    def scroll(self,x,y):
+    def scroll(self, x, y):
         self.stagePosX -= x
         self.stagePosY -= y
         col = (self.stagePosX % (self.tileWidth * len(self.tiles[0]))) // self.tileWidth
-        xOff = (0 - self.stagePosX%self.tileWidth)
+        xOff = (0 - self.stagePosX % self.tileWidth)
         row = (self.stagePosY % (self.tileHeight * len(self.tiles))) // self.tileHeight
         yOff = (0 - self.stagePosY % self.tileHeight)
 
@@ -89,19 +88,20 @@ class Background():
         row2 = ((self.stagePosY + self.tileHeight) % (self.tileHeight * len(self.tiles))) // self.tileHeight
         screen.blit(self.tiles[row][col], [xOff, yOff])
         screen.blit(self.tiles[row][col2], [xOff + self.tileWidth, yOff])
-        screen.blit(self.tiles[row2][col], [xOff, yOff+self.tileHeight])
+        screen.blit(self.tiles[row2][col], [xOff, yOff + self.tileHeight])
         screen.blit(self.tiles[row2][col2], [xOff + self.tileWidth, yOff + self.tileHeight])
 
         self.surface = screen.copy()
 
-    def setColour(self,colour):
+    def setColour(self, colour):
         self.colour = parseColour(colour)
         screen.fill(self.colour)
         pygame.display.update()
         self.surface = screen.copy()
 
+
 class newSprite(pygame.sprite.Sprite):
-    def __init__(self, filename, frames = 1):
+    def __init__(self, filename, frames=1):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
         img = loadImage(filename)
@@ -148,6 +148,7 @@ class newSprite(pygame.sprite.Sprite):
         if screenRefresh:
             updateDisplay()
 
+
 class newTextBox(pygame.sprite.Sprite):
     def __init__(self, text, xpos, ypos, width, case, maxLength, fontSize):
         pygame.sprite.Sprite.__init__(self)
@@ -174,15 +175,15 @@ class newTextBox(pygame.sprite.Sprite):
         unicode = keyevent.unicode
         if key > 31 and key < 127 and (
                 self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
-            if keyevent.mod in (1,2) and self.case == 1 and key >= 97 and key <= 122:
+            if keyevent.mod in (1, 2) and self.case == 1 and key >= 97 and key <= 122:
                 # force lowercase letters
                 self.text += chr(key)
             elif keyevent.mod == 0 and self.case == 2 and key >= 97 and key <= 122:
-                self.text += chr(key-32)
+                self.text += chr(key - 32)
             else:
                 # use the unicode char
                 self.text += unicode
-      
+
         elif key == 8:
             # backspace. repeat until clear
             keys = pygame.key.get_pressed()
@@ -263,17 +264,16 @@ class newLabel(pygame.sprite.Sprite):
                 maxWidth = thisRect.width
             if thisRect.height > maxHeight:
                 maxHeight = thisRect.height
-        self.image = pygame.Surface((maxWidth, (self.fontSize+1)*len(textLines)+5), pygame.SRCALPHA, 32)
+        self.image = pygame.Surface((maxWidth, (self.fontSize + 1) * len(textLines) + 5), pygame.SRCALPHA, 32)
         self.image.convert_alpha()
         if self.background != "clear":
             self.image.fill(parseColour(self.background))
         linePos = 0
         for lineSurface in lineSurfaces:
-            self.image.blit(lineSurface,[0,linePos])
-            linePos+=self.fontSize+1
+            self.image.blit(lineSurface, [0, linePos])
+            linePos += self.fontSize + 1
         self.rect = self.image.get_rect()
-       
-        
+
 
 def loadImage(fileName, useColorKey=False):
     if os.path.isfile(fileName):
@@ -321,7 +321,7 @@ def rotateSprite(sprite, angle):
 def transformSprite(sprite, angle, scale, hflip=False, vflip=False):
     oldmiddle = sprite.rect.center
     if hflip or vflip:
-        tempImage = pygame.transform.flip(sprite.images[sprite.currentImage],hflip,vflip)
+        tempImage = pygame.transform.flip(sprite.images[sprite.currentImage], hflip, vflip)
     else:
         tempImage = sprite.images[sprite.currentImage]
     if angle != 0 or scale != 1:
@@ -347,12 +347,12 @@ def setBackgroundColour(colour):
     if screenRefresh:
         updateDisplay()
 
+
 def setBackgroundImage(img):
     global background
     background.setTiles(img)
     if screenRefresh:
         updateDisplay()
-
 
 
 def hideSprite(sprite):
@@ -368,11 +368,13 @@ def hideAll():
     if screenRefresh:
         updateDisplay()
 
+
 def unhideAll():
     spriteGroup.add(hiddenSprites.sprites())
     hiddenSprites.empty()
     if screenRefresh:
         updateDisplay()
+
 
 def showSprite(sprite):
     spriteGroup.add(sprite)
@@ -381,11 +383,13 @@ def showSprite(sprite):
 
 
 def makeSprite(filename, frames=1):
-    thisSprite = newSprite(filename,frames)
+    thisSprite = newSprite(filename, frames)
     return thisSprite
+
 
 def addSpriteImage(sprite, image):
     sprite.addImage(image)
+
 
 def changeSpriteImage(sprite, index):
     sprite.changeImage(index)
@@ -488,6 +492,7 @@ def clearShapes():
 def updateShapes():
     pygame.display.update()
 
+
 def end():
     pygame.quit()
 
@@ -560,8 +565,8 @@ def keyPressed(keyCheck=""):
     global keydict
     pygame.event.clear()
     keys = pygame.key.get_pressed()
-    if sum(keys)>0:
-        if keyCheck=="" or keys[keydict[keyCheck.lower()]]:
+    if sum(keys) > 0:
+        if keyCheck == "" or keys[keydict[keyCheck.lower()]]:
             return True
     return False
 
@@ -602,7 +607,7 @@ def textBoxInput(textbox, functionToCall=None, args=[]):
     # starts grabbing key inputs, putting into textbox until enter pressed
     global keydict
     textbox.text = ""
-    returnVal=None
+    returnVal = None
     while True:
         updateDisplay()
         if functionToCall:
@@ -718,13 +723,16 @@ def mouseY():
     y = pygame.mouse.get_pos()
     return y[1]
 
-def scrollBackground(x,y):
+
+def scrollBackground(x, y):
     global background
-    background.scroll(x,y)
+    background.scroll(x, y)
+
 
 def setAutoUpdate(val):
     global screenRefresh
     screenRefresh = val
+
 
 if __name__ == "__main__":
     print(""""pygame_functions is not designed to be run directly.

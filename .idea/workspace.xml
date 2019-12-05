@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="819f54e5-661f-4a9a-843b-5aa1e8043142" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/Moon Lander 2 (with text label).py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/Moon Lander 2 (with text label).py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/pygame_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/pygame_functions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,16 +67,16 @@
   <component name="ProjectId" id="1Pjq6lwT4Fa01mtsYMGhTbg3Wg3" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/Pycharm projects/test" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git_repositories\Pygame_Functions\demos" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\git_repositories\Pygame_Functions\demos" />
       <recent name="E:\git_repositories\Pygame_Functions" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\git_repositories\Pygame_Functions\demos" />
     </key>
   </component>
   <component name="RunDashboard">
