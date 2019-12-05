@@ -43,8 +43,9 @@ while True:
         if yspeed > 10:
             changeSpriteImage(lander,1)
         yspeed = 0              # stop the movement
+        break
 
 
     tick(30)
-    
+
 
