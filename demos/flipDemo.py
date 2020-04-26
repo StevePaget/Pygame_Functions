@@ -5,7 +5,7 @@
 from pygame_functions import *
 
 screenSize(1024, 768)
-jurassic = makeSprite("images/jurassic.jpg")
+jurassic = makeSprite("images/Jurassic.jpg")
 showSprite(jurassic)
 
 angle = 0
