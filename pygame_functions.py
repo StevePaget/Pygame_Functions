@@ -549,21 +549,18 @@ def rewindMusic():
 def endWait():
     updateDisplay()
     print("Press ESC to quit")
-    keys = pygame.key.get_pressed()
-    current_time = pygame.time.get_ticks()
-    waittime = 0
-    while not keys[pygame.K_ESCAPE]:
-        current_time = pygame.time.get_ticks()
-        if current_time > waittime:
-            pygame.event.clear()
-            keys = pygame.key.get_pressed()
-            waittime += 20
+    waiting = True
+    while waiting:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == keydict["esc"]):
+                waiting = False
     pygame.quit()
+    exit()
+
 
 
 def keyPressed(keyCheck=""):
     global keydict
-    pygame.event.clear()
     keys = pygame.key.get_pressed()
     if sum(keys) > 0:
         if keyCheck == "" or keys[keydict[keyCheck.lower()]]:
@@ -636,11 +633,10 @@ def clock():
 
 
 def tick(fps):
-    pygame.event.clear()
-    keys = pygame.key.get_pressed()
-    if (keys[pygame.K_ESCAPE]):
-        pygame.quit()
-        sys.exit()
+    for event in pygame.event.get():
+        if (event.type == pygame.KEYDOWN and event.key == keydict["esc"]) or event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
     gameClock.tick(fps)
     return gameClock.get_fps()
 
@@ -683,7 +679,7 @@ def updateDisplay():
 
 
 def mousePressed():
-    pygame.event.clear()
+    #pygame.event.clear()
     mouseState = pygame.mouse.get_pressed()
     if mouseState[0]:
         return True
