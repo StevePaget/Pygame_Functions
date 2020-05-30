@@ -2,7 +2,8 @@ from pygame_functions import *
 
 screenSize(750,750)
 setBackgroundImage("images/stars.png")
-
+setIcon("images/lander.png")
+setWindowTitle("Moon Lander")
 
 surface = makeSprite("images/moonSurface.jpg")  # create the sprite object
 moveSprite(surface, 0, 650)                     # move it into position. It is not visible yet
