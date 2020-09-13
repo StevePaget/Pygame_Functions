@@ -4,7 +4,7 @@
 # Report bugs at https://github.com/StevePaget/Pygame_Functions/issues
 
 
-import pygame, math, sys, os
+import pygame, sys, os
 
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
@@ -183,7 +183,7 @@ class newTextBox(pygame.sprite.Sprite):
     def update(self, keyevent):
         key = keyevent.key
         unicode = keyevent.unicode
-        if key > 31 and key < 127 and (
+        if (31 < key < 127 or 255 < key < 266) and (
                 self.maxLength == 0 or len(self.text) < self.maxLength):  # only printable characters
             if keyevent.mod in (1, 2) and self.case == 1 and key >= 97 and key <= 122:
                 # force lowercase letters
