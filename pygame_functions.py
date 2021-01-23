@@ -6,6 +6,12 @@
 
 import pygame, sys, os
 
+from pathlib import Path
+DIR = Path(__file__).parent.absolute()
+DIR = f'{DIR}'.replace('\\','/')
+os.chdir(DIR)
+
+
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 pygame.mixer.init()
@@ -111,10 +117,12 @@ class Background():
 
 
 class newSprite(pygame.sprite.Sprite):
-    def __init__(self, filename, frames=1):
+    def __init__(self, filename, frames=1, altDims = None):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
         img = loadImage(filename)
+        if altDims:
+            img = pygame.transform.scale(img, (altDims[0]*frames, altDims[1]))
         self.originalWidth = img.get_width() // frames
         self.originalHeight = img.get_height()
         frameSurf = pygame.Surface((self.originalWidth, self.originalHeight), pygame.SRCALPHA, 32)
@@ -392,8 +400,8 @@ def showSprite(sprite):
         updateDisplay()
 
 
-def makeSprite(filename, frames=1):
-    thisSprite = newSprite(filename, frames)
+def makeSprite(filename, frames=1, altDims = None):
+    thisSprite = newSprite(filename, frames, altDims)
     return thisSprite
 
 
