@@ -300,19 +300,19 @@ def loadImage(fileName, useColorKey=False):
         # Return the image
         return image
     else:
-        raise Exception("Error loading image: " + fileName + " - Check filename and path?")
+        raise Exception(f"Error loading image: {fileName} – Check filename and path?")
 
 
 def screenSize(sizex, sizey, xpos=None, ypos=None, fullscreen=False):
     global screen
     global background
     if xpos != None and ypos != None:
-        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d, %d" % (xpos, ypos + 50)
+        os.environ['SDL_VIDEO_WINDOW_POS'] = f"{xpos}, {ypos + 50}"
     else:
         windowInfo = pygame.display.Info()
         monitorWidth = windowInfo.current_w
         monitorHeight = windowInfo.current_h
-        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d, %d" % ((monitorWidth - sizex) / 2, (monitorHeight - sizey) / 2)
+        os.environ['SDL_VIDEO_WINDOW_POS'] = f"{(monitorWidth - sizex) / 2}, {(monitorHeight - sizey) / 2}"
     if fullscreen:
         screen = pygame.display.set_mode([sizex, sizey], pygame.FULLSCREEN)
     else:
@@ -323,6 +323,7 @@ def screenSize(sizex, sizey, xpos=None, ypos=None, fullscreen=False):
     background.surface = screen.copy()
     pygame.display.update()
     return screen
+
 
 
 def moveSprite(sprite, x, y, centre=False):
@@ -756,5 +757,5 @@ def setWindowTitle(string):
 
 
 if __name__ == "__main__":
-    print(""""pygame_functions is not designed to be run directly.
-    See the wiki at https://github.com/StevePaget/Pygame_Functions/wiki/Getting-Started for more information""")
+    print("pygame_functions is not designed to be run directly.\n" \
+        "See the wiki at https://github.com/StevePaget/Pygame_Functions/wiki/Getting-Started for more information.")
