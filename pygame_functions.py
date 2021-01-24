@@ -312,7 +312,7 @@ def screenSize(sizex, sizey, xpos=None, ypos=None, fullscreen=False):
         windowInfo = pygame.display.Info()
         monitorWidth = windowInfo.current_w
         monitorHeight = windowInfo.current_h
-        os.environ['SDL_VIDEO_WINDOW_POS'] = f"{(monitorWidth - sizex) / 2}, {(monitorHeight - sizey) / 2}"
+        os.environ['SDL_VIDEO_WINDOW_POS'] = f"{(monitorWidth - sizex) // 2}, {(monitorHeight - sizey) // 2}"
     if fullscreen:
         screen = pygame.display.set_mode([sizex, sizey], pygame.FULLSCREEN)
     else:
