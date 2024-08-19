@@ -574,7 +574,7 @@ def endWait():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == keydict["esc"]):
                 waiting = False
     pygame.quit()
-    exit()
+    sys.exit()
 
 
 
