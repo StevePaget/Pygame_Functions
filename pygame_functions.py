@@ -7,15 +7,12 @@
 import pygame, sys, os
 
 from pathlib import Path
-DIR = Path(__file__).parent.absolute()
-DIR = f'{DIR}'.replace('\\','/')
-os.chdir(DIR)
 
 
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 pygame.mixer.init()
-spriteGroup = pygame.sprite.OrderedUpdates()
+spriteGroup = pygame.sprite.LayeredUpdates()
 textboxGroup = pygame.sprite.OrderedUpdates()
 gameClock = pygame.time.Clock()
 musicPaused = False
