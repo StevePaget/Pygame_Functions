@@ -15,7 +15,7 @@ os.chdir(DIR)
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 pygame.mixer.init()
-spriteGroup = pygame.sprite.OrderedUpdates()
+spriteGroup = pygame.sprite.LayeredUpdates()
 textboxGroup = pygame.sprite.OrderedUpdates()
 gameClock = pygame.time.Clock()
 musicPaused = False
@@ -395,8 +395,8 @@ def unhideAll():
         updateDisplay()
 
 
-def showSprite(sprite):
-    spriteGroup.add(sprite)
+def showSprite(sprite, layer=None):
+    spriteGroup.add(sprite, layer= layer)
     if screenRefresh:
         updateDisplay()
 
