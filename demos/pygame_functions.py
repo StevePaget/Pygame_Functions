@@ -413,6 +413,8 @@ def addSpriteImage(sprite, image):
 def changeSpriteImage(sprite, index):
     sprite.changeImage(index)
 
+def changeLayer(sprite, layer):
+    spriteGroup.change_layer(sprite, layer)
 
 def nextSpriteImage(sprite):
     sprite.currentImage += 1
